@@ -26,7 +26,7 @@ fun WellnessScreen(
     wellnessViewModel: WellnessViewModel = viewModel()
 ) {
     Column(modifier = modifier) {
-        StatefulCounter()
+        StatefulCounter(modifier)
 
         WellnessTasksList(
             list = wellnessViewModel.tasks,
@@ -34,8 +34,7 @@ fun WellnessScreen(
                 wellnessViewModel.changeTaskChecked(task, checked)
             },
             onCloseTask = { task ->
-                wellnessViewModel.remove(task)
-            }
+                wellnessViewModel.remove(task) }
         )
     }
 }
